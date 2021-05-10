@@ -310,6 +310,10 @@ def train(load_checkpoint_path=None):
 
 
 if __name__ == '__main__':
+    if len(sys.argv) > 1:
+        _N_EPOCHS = int(sys.argv[1])
+    print('Training', _N_EPOCHS, 'epochs')
+
     start = time.time()
     train()
     end = time.time()

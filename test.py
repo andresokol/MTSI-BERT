@@ -183,4 +183,11 @@ def test(load_checkpoint_path):
 
 
 if __name__ == '__main__':
-    test(load_checkpoint_path='dict_archive/MINI_BATCH16/100epochs/deep/state_dict.pt')
+    load_checkpoint_path = 'dict_archive/MINI_BATCH16/100epochs/deep/state_dict.pt'
+
+    if len(sys.argv) > 1:
+        load_checkpoint_path = sys.argv[1]
+
+    print('Loading weights "' + load_checkpoint_path + '"')
+
+    test(load_checkpoint_path=load_checkpoint_path)
